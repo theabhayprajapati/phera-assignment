@@ -37,34 +37,33 @@ const Todolist = () => {
 
     return (
         <div>
-            <h1>
+            <h1 className="text-2xl font-extrabold my-2">
                 Todolist
             </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-10 justify-around '>
                 {
                     todos.length > 0 ? todos.map((todo) => {
                         return (
-                            <div key={todo.id} className='border-2 shadow-sm shadow-white border-black p-2 rounded-lg'>
-                                <div>
-                                    <div className='grid  grid-cols-2 place-items-center font-bold items-center' >
-                                        <h1 className='place-self-center'>
-                                            {todo.title}
-                                        </h1>
-                                        <div className='flex place-self-end '>
-                                            <span
-                                                onClick={() => updateTodo(todo)}
-                                                className='justify-self-end grid self-end '>
-                                                📝
-                                            </span>
-                                            <span onClick={() => deleteTodo(todo.id)} className='justify-self-end grid self-end '>
-                                                🗑
-                                            </span>
-                                        </div>
+                            <div key={todo.id} className='border-2 shadow-sm shadow-white border-black p-2 rounded-lg' tabIndex={0}>
+                                <div className='grid  grid-cols-2 place-items-center font-bold items-center' >
+                                    <h1 className='place-self-center'>
+                                        {todo.title}
+                                    </h1>
+                                    <div className='flex place-self-end '>
+                                        <button
+                                            onClick={() => updateTodo(todo)}
+                                            className='justify-self-end grid  self-end '>
+                                            📝
+                                        </button>
+                                        <button onClick={() => deleteTodo(todo.id)} className='justify-self-end grid self-end '>
+                                            🗑
+                                        </button>
                                     </div>
-                                    <p className='text-gray-300'>
-                                        {todo.notes}
-                                    </p>
                                 </div>
+                                <p className='text-gray-300'>
+                                    {todo.notes}
+                                </p>
+
                             </div>
                         )
                     })
