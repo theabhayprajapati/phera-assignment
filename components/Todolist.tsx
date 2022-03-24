@@ -18,7 +18,7 @@ const Todolist = () => {
     // const currentodo = useRecoilValue(currentTodo)
     const [isEditing, setIsEditing] = useRecoilState(updatestate)
 
-    
+    const [editTodo, setEditTodo] = useRecoilState(currentTodo)
     let edittodo = null;
     console.log(typeof setEditTodo)
     // delete todo
@@ -42,9 +42,9 @@ const Todolist = () => {
             </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-10 justify-around '>
                 {
-                    todos.length > 0 && todos.map((todo) => {
+                    todos.length > 0 ? todos.map((todo) => {
                         return (
-                            <div key={todo.id} className='border-2 shadWow-sm shadow-white border-black p-2 rounded-lg'>
+                            <div key={todo.id} className='border-2 shadow-sm shadow-white border-black p-2 rounded-lg'>
                                 <div>
                                     <div className='grid  grid-cols-2 place-items-center font-bold items-center' >
                                         <h1 className='place-self-center'>
@@ -68,6 +68,15 @@ const Todolist = () => {
                             </div>
                         )
                     })
+                        :
+                        (
+                            <div className='flex justify-center  items-center'>
+                                <h1>
+                                    No todo
+                                </h1>
+                            </div>
+
+                        )
                 }
             </div>
         </div >

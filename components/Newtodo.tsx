@@ -40,7 +40,7 @@ const Newtodo = () => {
             <h1>
                 Add note
             </h1>
-            <div className='max-w-2xl mx-auto border  border-black p-2 rounded-lg space-y-3'>
+            <div className='max-w-2xl mx-auto border shadow-sm shadow-white border-black p-2 rounded-lg space-y-3'>
                 <div className='flex items-center justify-between  gap-5'>
                     <label htmlFor="notes" className='font-bold'>
                         Title
